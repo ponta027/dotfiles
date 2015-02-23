@@ -198,9 +198,6 @@ if 1 && filereadable($HOME . '/gvimrc')
 endif
 
 
-"==============================================================
-" 起動時に実行
-"==============================================================
 
 " 全角spaceをhighlight表示させる
 augroup ZenkakuSpace
@@ -211,12 +208,22 @@ augroup ZenkakuSpace
   autocmd VimEnter,WinEnter * match ZenkakuSpace /\%u8140/
 augroup END
 
-"全角スペース表示
-""highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
-""match ZenkakuSpace /　/
 
 
+""""""""""""""""""""""""""
+" 全角スペースの可視化
+""""""""""""""""""""""""""
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
 
-
+if has('syntax')
+    augroup ZenkakuSpace
+    autocmd!
+    autocmd ColorScheme * call ZenkakuSpace()
+    autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
 
 
