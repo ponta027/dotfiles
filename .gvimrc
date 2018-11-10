@@ -10,3 +10,6 @@ set columns=120
 """ Ref:/Applications/MacVim.app/Contents/Resources/vim""
 colorscheme darkblue
 
+
+"" Gvimで日本語入力時に動作がおかしくなるため。 
+set imdisable

@@ -23,8 +23,8 @@ set ts=4
 
 
 "不可視文字の表示
-""set list
-""set listchars=eol:$,tab:>\
+set list
+set listchars=eol:$,tab:>\
 
 
 "---mac 用設定
@@ -64,29 +64,30 @@ filetype plugin indent off
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
-  	call neobundle#begin(expand('~/.vim/bundle/'))
-	NeoBundleFetch 'Shougo/neobundle.vim'
-	call neobundle#end()
+  call neobundle#begin(expand('~/.vim/bundle/'))
 endif 
 
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'vcscommand.vim'
+""NeoBundleFetch 'Shougo/neobundle.vim'
+""NeoBundle 'Shougo/unite.vim'
+""NeoBundle 'vcscommand.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplte'
+""NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'derekwyatt/vim-scala'
+""NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'HybridText'
 NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'basyura/unite-yarm'
+""NeoBundle 'mattn/webapi-vim'
+""NeoBundle 'tyru/open-browser.vim'
+""NeoBundle 'basyura/unite-yarm'
+NeoBundle 'scrooloose/nerdtree'
 
 " NeoBundle End
-
+call neobundle#end()
 "
 filetype plugin indent on
 
