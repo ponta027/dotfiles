@@ -55,42 +55,6 @@ let g:VimShell_EnableInteractive = 1
 
 
 
-""""""""""""""""""""""""""""""""""
-" NeoBundle "
-""""""""""""""""""""""""""""""""""
-
-set nocompatible
-filetype plugin indent off
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle/'))
-endif 
-
-NeoBundleFetch 'Shougo/neobundle.vim'
-""NeoBundleFetch 'Shougo/neobundle.vim'
-""NeoBundle 'Shougo/unite.vim'
-""NeoBundle 'vcscommand.vim'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'Shougo/neocomplte'
-""NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'thinca/vim-quickrun'
-""NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'HybridText'
-NeoBundle 'tpope/vim-dispatch'
-""NeoBundle 'mattn/webapi-vim'
-""NeoBundle 'tyru/open-browser.vim'
-""NeoBundle 'basyura/unite-yarm'
-NeoBundle 'scrooloose/nerdtree'
-
-" NeoBundle End
-call neobundle#end()
-"
-filetype plugin indent on
-
 "------------------------------------------
 " Zencoding 
 "------------------------------------------
@@ -127,41 +91,6 @@ let g:quickrun_config['rst'] = {
 endif
 
 
-
-
-"---------------------------------------------------------------------------
-" key map
-"---------------------------------------------------------------------------
-"
-"============================================================================
-"
-"============================================================================
-imap <silent> <C-T><C-T> <C-R>=strftime("%H:%M:%S")<CR>
-imap <silent> <C-D><C-D> <C-R>=strftime("%Y%m%d")<CR>
-
-
-"================================
-" .vimrc編集、反映ショートカット
-"================================
-nnoremap <Space>. :<C-u>edit $HOME/.vimrc<CR>
-nnoremap <Space>, :<C-u>source $HOME/.vimrc<CR>
-
-
-"==============================
-
-"
-"==============================
-""let g:unite_enable_start_insert=1
-nnoremap <silent> <Space>uo :<C-u>:Unite -vertical -no-quit outline<CR>
-nnoremap <silent> <Space>uf :<C-u>:Unite -vertical -winwidth=40 -no-quit file<CR>
-
-
-"==============================
-"
-"==============================
-nnoremap <silent> <Space>log :call Openmemo()<CR>
-nnoremap <silent> <Space>todo :e C:\work\04_logging\todo.rst<CR>
-""nnoremap <silent> \r :QuickRun -cmdopt "<CR>
 
 
 
@@ -227,4 +156,6 @@ if has('syntax')
     call ZenkakuSpace()
 endif
 
-
+"""""""""""
+" C-language"
+map ,x <Plug>(operator-clang-format)$
