@@ -28,6 +28,7 @@ NeoBundle 'tpope/vim-dispatch'
 ""NeoBundle 'tyru/open-browser.vim'
 ""NeoBundle 'basyura/unite-yarm'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle "kana/vim-operator-user"
 
 
 
