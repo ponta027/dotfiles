@@ -1,0 +1,27 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown','md']
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_ft = ['markdown','md']
+
+
+
+[[plugins]]
+repos = 'mattn/emmet-vim'
+
+
+
+######## git
+[[plugins]]
+repos = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = "airblade/vim-gitgutter"

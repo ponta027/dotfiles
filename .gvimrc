@@ -8,7 +8,8 @@ set columns=120
 
 """ color schema
 """ Ref:/Applications/MacVim.app/Contents/Resources/vim""
-colorscheme darkblue
+""colorscheme darkblue
+""colorscheme molokai
 
 
 "" Gvimで日本語入力時に動作がおかしくなるため。 

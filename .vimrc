@@ -116,6 +116,8 @@ endfunction
 
 autocmd FileType c set tags=XXXX
 au BufRead,BufNewFile *.txt set syntax=hybrid
+au BufRead,BufNewFile *.md set syntax=hybrid
+au BufRead,BufNewFile *.html set syntax=hybrid
 
 
 
@@ -159,3 +161,5 @@ endif
 """""""""""
 " C-language"
 map ,x <Plug>(operator-clang-format)$
+
+
