@@ -15,13 +15,23 @@ on_ft = ['markdown','md']
 
 
 [[plugins]]
-repos = 'mattn/emmet-vim'
+repo = 'mattn/emmet-vim'
 
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
 
 
 ######## git
 [[plugins]]
-repos = 'tpope/vim-fugitive'
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = "airblade/vim-gitgutter"
+
+## Typescript 
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+[[plugins]]
+repo='clausreinke/typescript-tools'
