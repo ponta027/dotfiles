@@ -29,6 +29,7 @@ NeoBundle 'tpope/vim-dispatch'
 ""NeoBundle 'basyura/unite-yarm'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle "kana/vim-operator-user"
+NeoBundle 'vim-scripts/taglist.vim.git'
 
 
 

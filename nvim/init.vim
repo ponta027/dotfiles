@@ -1,5 +1,6 @@
 syntax
 set number
+set shiftwidth=2
 colorscheme darkblue
 
 
@@ -27,10 +28,24 @@ call plug#begin('~/.vim/plugged')
   Plug 'neovimhaskell/haskell-vim'
   Plug 'thinca/vim-quickrun'
 
+  "" NERDTree
+  Plug 'preservim/nerdtree'
+
   "" markdown preview
   Plug 'kazuph/previm', {'branch':'feature/add-plantuml-plugin'}
   Plug 'tyru/open-browser.vim'
   Plug 'aklt/plantuml-syntax'
+  
+  "" neosnippet
+  Plug 'Shougo/neosnippet.vim'
+  Plug 'Shougo/neosnippet-snippets'
+
+
+  " clang-format
+  Plug 'rhysd/vim-clang-format'
+  Plug 'kana/vim-operator-user'
+
+
 call plug#end()
 
 "" markdown
@@ -40,3 +55,20 @@ let g:vim_markdown_folding_disabled=1
 let g:previm_enable_realtime=1
 
 
+
+
+
+let g:neosnippet#snippets_directory='~/.config/nvim/my_snippet'
+
+" SuperTab like snippets behavior.
+imap  <expr><TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
