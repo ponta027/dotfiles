@@ -45,6 +45,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'rhysd/vim-clang-format'
   Plug 'kana/vim-operator-user'
 
+  " git
+  Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
