@@ -2,6 +2,7 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+<<<<<<< HEAD
 repo = 'Shougo/vimproc.vim'
 hook_post_update = '''
   if dein#util#_is_windows()
@@ -47,3 +48,38 @@ repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'millermedeiros/vim-esformatter'
+=======
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown','md']
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_ft = ['markdown','md']
+
+
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+
+######## git
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = "airblade/vim-gitgutter"
+
+## Typescript 
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+[[plugins]]
+repo='clausreinke/typescript-tools'
+>>>>>>> 9997d3243f1b741031fbbc8628b4a6b1370c368a
