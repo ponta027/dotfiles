@@ -1,7 +1,8 @@
-syntax
+syntax on 
 set number
 set shiftwidth=2
-colorscheme darkblue
+""colorscheme darkblue
+colorscheme slate
 
 
 source ~/.config/nvim/command.vim
@@ -48,6 +49,15 @@ call plug#begin('~/.vim/plugged')
   " git
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
+
+  Plug 'Shougo/unite.vim'
+  Plug 'Shougo/unite-outline'
+
+  " go
+  "
+  Plug 'mattn/vim-goimports'
+  let g:goimports = 1
+
 
 call plug#end()
 

@@ -2,7 +2,6 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-<<<<<<< HEAD
 repo = 'Shougo/vimproc.vim'
 hook_post_update = '''
   if dein#util#_is_windows()
@@ -48,7 +47,7 @@ repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'millermedeiros/vim-esformatter'
-=======
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
@@ -82,4 +81,27 @@ repo = "airblade/vim-gitgutter"
 repo = 'leafgarland/typescript-vim'
 [[plugins]]
 repo='clausreinke/typescript-tools'
->>>>>>> 9997d3243f1b741031fbbc8628b4a6b1370c368a
+
+## go lang
+[[plugins]]
+repo = 'mattn/vim-goimports'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+
+[[plugins]]
+repo='rust-lang/rust.vim'
+
