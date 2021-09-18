@@ -1,0 +1,55 @@
+call plug#begin()
+
+"File 
+Plug 'scrooloose/nerdtree'
+
+" Util
+Plug 'thinca/vim-quickrun'
+
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+
+"LSP"
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
+
+" Rust
+Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+" for asyncomplete.vim log
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+set hidden
+
+" settings for languages
+let g:LanguageClient_serverCommands = {
+            \ 'cpp': ['clangd'],
+            \ 'rust': ['rustup', 'run', 'nightly', 'rust-analyzer'],
+            \ }
+
+
+augroup LanguageClient_config
+    autocmd!
+    autocmd User LanguageClientStarted setlocal signcolumn=yes
+    autocmd User LanguageClientStopped setlocal signcolumn=auto
+augroup END
+
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> <Space>lh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <Space>ld :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <Space>lr :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <Space>lf :call LanguageClient_textDocument_formatting()<CR>
+
+
+" Go
+Plug 'mattn/vim-goimports'
+
+" Git 
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+
+call plug#end()
