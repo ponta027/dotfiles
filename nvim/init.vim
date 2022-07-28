@@ -1,10 +1,7 @@
 syntax on 
-set number
-set shiftwidth=2
-""colorscheme darkblue
-colorscheme slate
 
 
+source ~/.config/nvim/setup.vim
 source ~/.config/nvim/command.vim
 
 if has('vim_starting')
@@ -25,7 +22,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
   Plug 'scrooloose/nerdtree'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'neovimhaskell/haskell-vim'
   Plug 'thinca/vim-quickrun'
 
@@ -33,7 +29,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
 
   "" markdown preview
-  Plug 'kazuph/previm', {'branch':'feature/add-plantuml-plugin'}
+  Plug 'previm/previm'
+  ""Plug 'kazuph/previm', {'branch':'feature/add-plantuml-plugin'}
   Plug 'tyru/open-browser.vim'
   Plug 'aklt/plantuml-syntax'
   
@@ -62,14 +59,10 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 "" markdown
-autocmd BufRead,BufNewFile *.md  set filetype=markdown
-nnoremap <silent> <C-p> :PrevimOpen<CR>
-let g:vim_markdown_folding_disabled=1
-let g:previm_enable_realtime=1
-
-
-
-
+"autocmd BufRead,BufNewFile *.md  set filetype=markdown
+"nnoremap <silent> <C-p> :PrevimOpen<CR>
+"let g:vim_markdown_folding_disabled=1
+"let g:previm_enable_realtime=1
 
 let g:neosnippet#snippets_directory='~/.config/nvim/my_snippet'
 
@@ -85,3 +78,5 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+
