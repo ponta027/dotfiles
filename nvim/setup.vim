@@ -3,7 +3,10 @@
 
 set number
 set shiftwidth=2
+set cursorline
+set cursorcolumn
 colorscheme slate
+
 
 "" show invsible char
 set list
@@ -29,6 +32,14 @@ if has('syntax')
     call ZenkakuSpace()
 endif
 
+
+""""""""""""""""""""""""""""""""""""""
+"" terminal setup 
+""""""""""""""""""""""""""""""""""""""
+tnoremap <Esc> <C-\><C-n>
+command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
+
+"" end
 
 
 

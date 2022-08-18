@@ -3,9 +3,11 @@ syntax on
 
 source ~/.config/nvim/setup.vim
 source ~/.config/nvim/command.vim
+source ~/.vim/autoload/plug.vim
+
 
 if has('vim_starting')
-  set rtp+=~/.vim/plugged/vim-plug
+  set rtp+=~/.vim/plugged
   if !isdirectory(expand('~/.vim/plugged/vim-plug'))
     echo 'install vim-plug...'
     call system('mkdir -p ~/.vim/plugged/vim-plug')
@@ -30,7 +32,6 @@ call plug#begin('~/.vim/plugged')
 
   "" markdown preview
   Plug 'previm/previm'
-  ""Plug 'kazuph/previm', {'branch':'feature/add-plantuml-plugin'}
   Plug 'tyru/open-browser.vim'
   Plug 'aklt/plantuml-syntax'
   
@@ -55,6 +56,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/vim-goimports'
   let g:goimports = 1
 
+"LSP"
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+
 
 call plug#end()
 
@@ -78,5 +86,35 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+
+"""""""""""""""""""""""""
+" Rust
+" """""""""""""""""""""""
+let g:rustfmt_autosave = 1
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+" for asyncomplete.vim log
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+set hidden
+
+" settings for languages
+let g:LanguageClient_serverCommands = {
+            \ 'cpp': ['clangd'],
+            \ }
+
+"            \ 'rust': ['rustup', 'run', 'nightly', 'rust-analyzer'],
+
+augroup LanguageClient_config
+    autocmd!
+    autocmd User LanguageClientStarted setlocal signcolumn=yes
+    autocmd User LanguageClientStopped setlocal signcolumn=auto
+augroup END
+
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> <Space>lh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <Space>ld :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <Space>lr :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <Space>lf :call LanguageClient_textDocument_formatting()<CR>
 
 
