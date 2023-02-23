@@ -3,6 +3,8 @@
 
 set number
 set shiftwidth=2
+set tabstop=2
+set expandtab
 set cursorline
 set cursorcolumn
 colorscheme slate

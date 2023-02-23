@@ -1,11 +1,6 @@
 syntax on 
 
 
-source ~/.config/nvim/setup.vim
-source ~/.config/nvim/command.vim
-source ~/.vim/autoload/plug.vim
-
-
 if has('vim_starting')
   set rtp+=~/.vim/plugged
   if !isdirectory(expand('~/.vim/plugged/vim-plug'))
@@ -14,6 +9,12 @@ if has('vim_starting')
     call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
   end
 endif
+
+source ~/.config/nvim/setup.vim
+source ~/.config/nvim/command.vim
+source ~/.vim/plugged/vim-plug/autoload/plug.vim
+
+
 
 """"""""""""""""""""""""""""""
 " 
@@ -34,6 +35,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'previm/previm'
   Plug 'tyru/open-browser.vim'
   Plug 'aklt/plantuml-syntax'
+  Plug 'godlygeek/tabular'
+  Plug 'preservim/vim-markdown'
+  Plug 'mattn/vim-maketable'
   
   "" neosnippet
   Plug 'Shougo/neosnippet.vim'
@@ -67,10 +71,10 @@ Plug 'rust-lang/rust.vim'
 call plug#end()
 
 "" markdown
-"autocmd BufRead,BufNewFile *.md  set filetype=markdown
-"nnoremap <silent> <C-p> :PrevimOpen<CR>
+autocmd BufRead,BufNewFile *.md  set filetype=markdown
+nnoremap <silent> <C-p> :PrevimOpen<CR>
 "let g:vim_markdown_folding_disabled=1
-"let g:previm_enable_realtime=1
+let g:previm_enable_realtime=1
 
 let g:neosnippet#snippets_directory='~/.config/nvim/my_snippet'
 
