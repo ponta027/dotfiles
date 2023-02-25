@@ -1,5 +1,5 @@
 colorscheme slate
-set clipboard+=unnamed
+set clipboard=unnamedplus
 set cursorcolumn
 set cursorline
 set encoding=utf-8
@@ -29,9 +29,9 @@ autocmd BufNewFile,BufFilePre,BufRead *.md  set filetype=markdown
 ""
 nnoremap <Space>. :<C-u>edit $HOME/.config/nvim/init.vim<CR>
 nnoremap <Space>, :<C-u>source $HOME/.config/nvim/init.vim<CR>
+nnoremap <Space>outline :Unite outline -vertical -no-quit -winwidth=30 <CR><CR>
 imap <silent> <C-T><C-T>  <C-R>=strftime("%H:%M:%S")<CR>
 imap <silent> <C-D><C-D>  <C-R>=strftime("%Y-%m-%d")<CR>
-imap <silent> <Space>outline :Unite outlint -vertical -no-quit -winwidth=30 <CR><CR>
 
 " start neosnippet  configuration
 let g:neosnippet#snippets_directory='~/.config/nvim/snippet'
