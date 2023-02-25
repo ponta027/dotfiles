@@ -5,7 +5,7 @@ set cursorline
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
-set fileencodings=utf-8,sjis,iso-2022-jp,ecu-jp
+set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp
 set fileformat=unix
 set list
 set listchars=eol:$,tab:>\
