@@ -25,7 +25,6 @@ autocmd BufNewFile,BufFilePre,BufRead *.md  set filetype=markdown
 
 ""
 
-let g:neosnippet#snippets_directory='~/.config/nvim/snippet'
 
 ""
 nnoremap <Space>. :<C-u>edit $HOME/.config/nvim/init.vim<CR>
@@ -34,6 +33,18 @@ imap <silent> <C-T><C-T>  <C-R>=strftime("%H:%M:%S")<CR>
 imap <silent> <C-D><C-D>  <C-R>=strftime("%Y-%m-%d")<CR>
 imap <silent> <Space>outline :Unite outlint -vertical -no-quit -winwidth=30 <CR><CR>
 
+" start neosnippet  configuration
+let g:neosnippet#snippets_directory='~/.config/nvim/snippet'
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+" end neosnippet
 
 "" show invsible char
 augroup ZenkakuSpace
