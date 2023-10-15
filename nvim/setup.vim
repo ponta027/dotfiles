@@ -22,6 +22,8 @@ set statusline=%F%m%r%h%w\%=[TYPE=%Y][FORMAT=%{&ff}][ENC=%{&fileencoding}][ROW=%
 
 ""
 autocmd BufNewFile,BufFilePre,BufRead *.md  set filetype=markdown
+let g:vim_markdown_conceal_code_blocks = 0
+
 
 ""
 
@@ -33,13 +35,6 @@ nnoremap <Space>outline :Unite outline -vertical -no-quit -winwidth=30 <CR><CR>
 imap <silent> <C-T><C-T>  <C-R>=strftime("%H:%M:%S")<CR>
 imap <silent> <C-D><C-D>  <C-R>=strftime("%Y-%m-%d")<CR>
 
-" start neosnippet  configuration
-let g:neosnippet#snippets_directory='~/.config/nvim/snippet'
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif

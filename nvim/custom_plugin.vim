@@ -1,1 +1,1 @@
-echo "custom plugin"
+"echo "custom plugin"
