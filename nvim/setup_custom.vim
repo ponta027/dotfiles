@@ -1,2 +1,2 @@
 
-echo "setup custom"
+"echo "setup custom"

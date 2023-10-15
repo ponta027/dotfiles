@@ -41,6 +41,7 @@ Plug 'mattn/vim-goimports'
 let g:goimports = 1
 " Rust
 Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
 
 " Util
 Plug 'Shougo/unite-outline'
@@ -51,7 +52,14 @@ Plug 'kamykn/popup-menu.nvim'
 Plug 'mattn/webapi-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'thinca/vim-quickrun'
+Plug 'xavierchow/vim-swagger-preview'
 
+" coc"
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'w0rp/ale'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
 
 "custom"
 source ~/.config/nvim/custom_plugin.vim
@@ -59,7 +67,9 @@ source ~/.config/nvim/custom_plugin.vim
 call plug#end()
 
 source ~/.config/nvim/setup.vim
+source ~/.config/nvim/setup_plugin.vim
 source ~/.config/nvim/setup_wsl.vim
 source ~/.config/nvim/setup_custom.vim
+
 
 
