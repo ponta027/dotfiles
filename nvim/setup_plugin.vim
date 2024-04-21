@@ -35,4 +35,4 @@ let g:ale_linters = {}
 let g:ale_linters.markdown = ['textlint']
 let g:ale_completion_enabled = 1
 
-
+let g:NERDTreeShowHidden=0

@@ -36,6 +36,8 @@ Plug 'Shougo/neosnippet-snippets'
 
 " clang-format
 Plug 'rhysd/vim-clang-format'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+
 " go
 Plug 'mattn/vim-goimports'
 let g:goimports = 1
@@ -51,6 +53,8 @@ Plug 'itchyny/calendar.vim'
 Plug 'kamykn/popup-menu.nvim'
 Plug 'mattn/webapi-vim'
 Plug 'scrooloose/nerdtree'
+let g:NERDTreeShowHidden=1
+
 Plug 'thinca/vim-quickrun'
 Plug 'xavierchow/vim-swagger-preview'
 
@@ -70,6 +74,12 @@ source ~/.config/nvim/setup.vim
 source ~/.config/nvim/setup_plugin.vim
 source ~/.config/nvim/setup_wsl.vim
 source ~/.config/nvim/setup_custom.vim
+
+
+
+let mapleader = "\<space>"
+let g:unite_split_rule = 'botright'
+nnoremap <silent> <Leader>o :<C-u>Unite -vertical -winwidth=30 -no-quit outline<CR>
 
 
 

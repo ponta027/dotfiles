@@ -11,6 +11,22 @@ options		head
 	
 	${0}
 
+snippet		new_lib_project
+options		head
+	project(${1:project_name})
+	
+	set(${2:PROJECT}_VERSION_MAJOR 0)
+	set($2_VERSION_MINOR 0)
+	set($2_VERSION_TEENY 1)
+	set(PACKAGE_VERSION "${$2_VERSION_MAJOR}.${$2_VERSION_MINOR}.${$2_VERSION_TEENY}")
+	
+	cmake_minimum_required(VERSION ${3:2.8})
+	
+	set(LIB_SRC sample.c)
+	
+	add_library($1 SHARED ${LIB_SRC})
+
+
 snippet		if
 abbr		if() endif()
 options		head
@@ -95,5 +111,17 @@ snippet         add_executable
 abbr            add_executable()
 options         head
         add_executable( ${1:#:var} ${2:#:code})
+
+snippet		inc
+abbr		inc()
+options		head
+	target_include_directories(${1:#:var} PUBLIC ${2:#:inc_paths})
+
+
+snippet		link
+abbr		link()
+options		head
+	target_link_libraries(${1:#:var} PRIVATE ${2:#:inc_paths})
+
 
 
