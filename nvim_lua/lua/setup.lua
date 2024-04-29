@@ -15,6 +15,7 @@ vim.opt.shiftwidth=2
 vim.opt.synmaxcol=200
 vim.opt.tabstop=2
 vim.opt.textwidth=0
+vim.opt.pastetoggle="<leader>p"
 
 
 vim.cmd [[
