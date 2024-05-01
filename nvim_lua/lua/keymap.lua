@@ -1,5 +1,4 @@
 
-vim.g.mapleader = " "
 vim.api.nvim_set_keymap('n', '<leader>o', ':<C-u>Unite -vertical -winwidth=30 -no-quit outline<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>.', ':<C-u>edit $HOME/.config/nvim/init.lua<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>,', ':<C-u>source $HOME/.config/nvim/init.lua<CR>', {noremap = true})
@@ -22,3 +21,4 @@ end
 vim.api.nvim_create_user_command("CopyAbsoluteFilePath", function()
   copy_to_clipboard(get_path(":p"))
 end, { nargs = 0, force = true, desc = "Copy absolute file path to the clipboard" })
+
