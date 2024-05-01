@@ -1,4 +1,5 @@
 
+vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.clipboard:append{'unnamedplus'}
 vim.opt.cursorcolumn=true
@@ -15,7 +16,6 @@ vim.opt.shiftwidth=2
 vim.opt.synmaxcol=200
 vim.opt.tabstop=2
 vim.opt.textwidth=0
-vim.opt.pastetoggle="<leader>p"
 
 
 vim.cmd [[

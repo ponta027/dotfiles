@@ -18,8 +18,12 @@ neovim
 ### install coc
 
 ```
-cd ~/.config/nvim/site/pack/packer/start/coc.nvim
-nvm install lts
+cd ~/.local/share/nvim/site/pack/packer/start/coc.nvim
+nvm install --lts
+
+# yarnがインストールされていない場合
+npm install -g yarn
+
 yarn install
 ```
 
