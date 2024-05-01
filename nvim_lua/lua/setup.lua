@@ -1,4 +1,5 @@
 
+vim.g.mapleader = " "
 vim.opt.number = true
 vim.opt.clipboard:append{'unnamedplus'}
 vim.opt.cursorcolumn=true
